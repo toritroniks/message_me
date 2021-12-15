@@ -1,24 +1,35 @@
-# README
+# Development Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- ruby: 2.5.1
+- bundler: 1.17.3
+- nodejs: 16.13.1
 
-Things you may want to cover:
+## MySQL default info
 
-* Ruby version
+- version: 5.7
+- host: 127.0.0.1
+- port: 3307
+- database: message_me
+- user: dev
+- password: password
 
-* System dependencies
+※ MySQL settings can be changed at `config/database.yml`
 
-* Configuration
+## Rails setup
 
-* Database creation
+```bash
+# install gems
+bundle install
+# create the db structure
+bundle exec rails db:migrate
+# insert initial data
+bundle exec rails db:seed
+```
 
-* Database initialization
+## Run local server
 
-* How to run the test suite
+```bash
+bundle exec rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+※ You can see the app at http://localhost:3000
