@@ -10,7 +10,7 @@
 - host: 127.0.0.1
 - port: 3307
 - database: message_me
-- user: dev
+- user: message_me
 - password: password
 
 ※ MySQL settings can be changed at `config/database.yml`
