@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7.36
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: message_me_development
+      MYSQL_USER: message_me
+      MYSQL_PASSWORD: password
+    ports:
+      - 4306:3306
+    volumes:
+      - ./db/local_data:/var/lib/mysql
+
+  app:
+    build: ./
+    image: message_me
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql

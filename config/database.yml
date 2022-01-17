@@ -15,12 +15,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: message_me
   password: password
-  host: 127.0.0.1
+  host: <%= ENV.fetch("MYSQL_HOST") { "127.0.0.1" } %>
+  port: <%= ENV.fetch("MYSQL_PORT") { 3307 } %>
 
 development:
   <<: *default
   database: message_me_development
-  port: 3307
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,7 +28,6 @@ development:
 test:
   <<: *default
   database: message_me_test
-  port: 3307
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
