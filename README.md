@@ -9,7 +9,7 @@
 - version: 5.7
 - host: 127.0.0.1
 - port: 3307
-- database: message_me
+- database: message_me_development
 - user: message_me
 - password: password
 
