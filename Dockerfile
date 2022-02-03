@@ -18,7 +18,8 @@ RUN bundle install
 
 COPY . .
 
-RUN chmod +x ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh \
+    && rake assets:precompile
 
 EXPOSE 3000
 
