@@ -24,4 +24,4 @@ EXPOSE 3000
 
 ENTRYPOINT [ "./entrypoint.sh" ]
 
-CMD ["rails", "s", "-b", "0.0.0.0"]
+CMD [ "rails", "s", "-b", "0.0.0.0" ]

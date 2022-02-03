@@ -28,3 +28,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# ignore local data.
+/db/local_data
