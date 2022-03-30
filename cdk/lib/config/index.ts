@@ -1,9 +1,9 @@
-import * as cdk from '@aws-cdk/core';
+import { StackProps, Environment } from 'aws-cdk-lib';
 import configDev from './configDev';
 import configPrd from './configPrd';
 
-export interface Config extends cdk.StackProps {
-  readonly env: cdk.Environment;
+export interface Config extends StackProps {
+  readonly env: Environment;
   readonly envName: EnvName;
   readonly azCount: number;
 }
