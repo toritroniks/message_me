@@ -1,0 +1,19 @@
+{
+  "baseCdkStack": {
+    "scope": "typescript",
+    "prefix": "stack",
+    "body": [
+      "import * as cdk from '@aws-cdk/core';",
+      "import { Config } from '../../config';",
+      "",
+      "export class ${1:StackName} extends cdk.Stack {",
+      "\tconstructor(scope: cdk.Construct, id: string, props: Config) {",
+      "\t\tsuper(scope, id, props);",
+      "\t\t$0",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Base CDK stack"
+  }
+}

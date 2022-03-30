@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
-import { EcsFargate } from '../lib/stacks/ecs-fargate';
+import { App as CdkApp } from 'aws-cdk-lib';
 import configs, { EnvName } from '../lib/config';
-import { Vpc } from '../lib/stacks/vpc';
+import { Vpc } from '../stacks/vpc';
+import { App } from '../stacks/app';
+import { Batch } from '../stacks/batch';
 
-const app = new cdk.App();
+const app = new CdkApp();
 
 function buildEnvStacks(env: EnvName) {
-  new Vpc(app, `CdkVpc-${env}`, configs[env]);
-  new EcsFargate(app, `CdkEcsFargate-${env}`, configs[env]);
+  new Vpc(app, `Vpc-${env}`, configs[env]);
+  new App(app, `App-${env}`, configs[env]);
+  new Batch(app, `Batch-${env}`, configs[env]);
 }
 
 buildEnvStacks('dev');

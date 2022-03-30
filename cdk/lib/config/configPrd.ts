@@ -1,7 +1,7 @@
 import { Config } from '.';
 
 const configPrd: Config = {
-  env: { account: '123456789012', region: 'ap-northeast-1' },
+  env: { account: '112977156086', region: 'us-east-2' },
   envName: 'prd',
   azCount: 3,
 };

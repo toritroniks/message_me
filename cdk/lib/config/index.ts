@@ -16,3 +16,5 @@ const configs: { [k in EnvName]: Config } = {
 };
 
 export default configs;
+
+export { constants } from './constants';
