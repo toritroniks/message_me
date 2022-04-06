@@ -108,6 +108,7 @@ export class Batch extends Stack {
           },
         }
       );
+      jobDef.node.addDependency(execRole);
       const cfnJobDef = jobDef.node.defaultChild as batch.CfnJobDefinition;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (cfnJobDef.containerProperties as any).secrets = [
